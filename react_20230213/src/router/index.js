@@ -7,6 +7,8 @@ import Layout from "../components/Layout";
 import { HomePage, BlogPage, BlogDetailPage, AboutPage } from "../pages";
 
 //MEMO: /blog/123
+
+//MEMO: Next.js
 const router = (
   <Route>
     <Route path="/" element={<HomePage />} />
