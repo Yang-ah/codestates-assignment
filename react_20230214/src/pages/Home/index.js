@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Card from "./Card";
-import styles from "./home.module.css";
+import styles from "./home.module.scss";
 
 const Home = () => {
   const [count, setCount] = useState(0);
@@ -9,29 +9,11 @@ const Home = () => {
   const [form, setForm] = useState({
     email: "",
     password: "",
-    password2: "",
-    password3: "",
-    password4: "",
-    password5: "",
-    password6: "",
-    password7: "",
-    password8: "",
-    password9: "",
-    password10: "",
-    password11: "",
-    password12: "",
-    password13: "",
-    password14: "",
-    password15: "",
-    password16: "",
-    password17: "",
   });
 
   const onClick = (e) => {
     e.preventDefault();
     e.stopPropagation();
-
-    console.log("BUTTON CLICK");
 
     setCount((prev) => {
       return prev + 1;
@@ -59,12 +41,19 @@ const Home = () => {
   };
 
   return (
-    <main style={{ margin: "40px" }}>
+    <main className={styles.wrapper}>
       <h1>onChange</h1>
       <p>이메일 : {form.email}</p>
-      <input type="text" name="email" value={form.email} onChange={onChange} />
+      <input
+        className={styles.input}
+        type="text"
+        name="email"
+        value={form.email}
+        onChange={onChange}
+      />
       <p>비밀번호 : {form.password}</p>
       <input
+        className={styles.input}
         type="text"
         name="password"
         value={form.password}
