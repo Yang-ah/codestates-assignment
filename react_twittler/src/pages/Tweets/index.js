@@ -6,15 +6,13 @@ import styles from "./Tweets.module.css";
 import dummyTweets from "../../static/dummyData";
 
 const Tweets = () => {
-  // TODO : 새로 트윗을 작성하고 전송할 수 있게 useState를 적절히 활용하세요.
-
   const [tweets, setTweets] = useState(dummyTweets);
   const [input, setInput] = useState({
     username: "",
     content: "",
   });
 
-  const handleButtonClick = (event) => {
+  const handleButtonClick = () => {
     setTweets((prev) => [
       ...prev,
       {
