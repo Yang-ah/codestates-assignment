@@ -17,6 +17,11 @@ const Home = () => {
     setArr((prev) => [...prev, 1]);
   }, []);
 
+  useEffect(() => {
+    //~~~~
+    return () => {}; //이벤트리스너
+  }, []);
+
   return (
     <main className={styles.wrapper}>
       <h1>Home </h1>

@@ -5,6 +5,7 @@ import styles from "./sidebar.module.css";
 
 const Sidebar = () => {
   const navigate = useNavigate();
+
   const onClick = (path) => {
     return () => {
       navigate(path);

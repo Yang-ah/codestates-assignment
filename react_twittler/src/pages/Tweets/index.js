@@ -1,4 +1,3 @@
-// TODO : useState를 react로 부터 import 합니다.
 import React, { useState } from "react";
 import Footer from "../../components/Layout/Footer";
 import Tweet from "../../components/Tweet";
@@ -8,21 +7,20 @@ import dummyTweets from "../../static/dummyData";
 const Tweets = () => {
   const [tweets, setTweets] = useState(dummyTweets);
   const [input, setInput] = useState({
-    username: "",
+    username: "parkhacker",
     content: "",
   });
 
   const handleButtonClick = () => {
-    setTweets((prev) => [
-      ...prev,
-      {
-        ...input,
-        id: prev.length + 1,
-        picture: "https://randomuser.me/api/portraits/men/98.jpg",
-        createdAt: new Date(),
-        updatedAt: new Date(),
-      },
-    ]);
+    const newTweet = {
+      ...input,
+      id: tweets.length + 1, //MEMO: 서버
+      picture: "https://randomuser.me/api/portraits/men/98.jpg",
+      createdAt: new Date(), //MEMO: 서버
+      updatedAt: new Date(), //MEMO: 서버
+    };
+    const tmpTweets = [newTweet, ...tweets];
+    setTweets(tmpTweets);
   };
 
   const onChange = (e) => {
@@ -45,13 +43,12 @@ const Tweets = () => {
               <div className={styles.tweetForm__input}>
                 <input
                   type="text"
-                  defaultValue="parkhacker"
                   placeholder="your username here.."
                   className={styles["tweetForm__input--username"]}
                   name="username"
                   onChange={onChange}
                   value={input.username}
-                ></input>
+                />
                 <textarea
                   name="content"
                   onChange={onChange}
@@ -80,8 +77,8 @@ const Tweets = () => {
       </div>
       <div className={styles.tweet__selectUser}></div>
       <ul className={styles.tweets}>
-        {tweets.reverse().map((tweet) => (
-          <Tweet tweet={tweet} />
+        {tweets.map((tweet) => (
+          <Tweet key={`${tweet.id}-${tweet.username}`} tweet={tweet} />
         ))}
       </ul>
       <Footer />
