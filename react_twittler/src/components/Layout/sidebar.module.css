@@ -1,0 +1,21 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 120px;
+}
+
+.far {
+  font-size: 2rem;
+  color: var(--default-text-color);
+  padding: 1.3rem;
+  cursor: pointer;
+}
+
+.far.fa-comment-dots {
+}
+
+.far.fa-question-circle {
+}
+
+.far.fa-user {
+}
