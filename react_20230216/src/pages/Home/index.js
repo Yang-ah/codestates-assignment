@@ -11,6 +11,7 @@ const Home = () => {
     // MEMO: fetch 사용
     // const response = await fetch(`${API_URL}/users/1`, { method: "GET" });
     // const responseData = await response.json();
+
     // setData(responseData);
 
     // MEMO: axios 사용
