@@ -11,7 +11,7 @@ const Tweets = () => {
     content: "",
   });
 
-  const handleButtonClick = () => {
+  const onClickButton = () => {
     const newTweet = {
       ...input,
       id: tweets.length + 1, //MEMO: 서버
@@ -67,7 +67,7 @@ const Tweets = () => {
               <button
                 type="button"
                 className={styles.submitButton}
-                onClick={handleButtonClick}
+                onClick={onClickButton}
               >
                 제출
               </button>
