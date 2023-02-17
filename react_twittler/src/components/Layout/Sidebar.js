@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom";
 import styles from "./sidebar.module.css";
 
 const Sidebar = () => {
+  //MEMO: 경로를 이동할 때 사용
   const navigate = useNavigate();
 
   const onClick = (path) => {

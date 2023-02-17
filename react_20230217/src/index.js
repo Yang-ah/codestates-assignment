@@ -5,7 +5,6 @@ import { HomePage } from "./pages";
 import reportWebVitals from "./reportWebVitals";
 
 import "./styles/global.scss";
-
 //MEMO: SASS => SASS / SCSS
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
