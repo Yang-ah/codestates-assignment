@@ -14,5 +14,9 @@
     font-weight: 700;
     color: c.$C_YELLOW;
     background-color: c.$C_BLUE;
+    > p {
+      color: c.$C_GREEN;
+      background-color: c.$C_RED;
+    }
   }
 }

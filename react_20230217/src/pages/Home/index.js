@@ -6,7 +6,10 @@ const Home = () => {
     <div>
       <main className={styles.wrapper}>
         <h1>Home </h1>
-        <div className={styles.hello}>hello</div>
+        <div className={styles.hello}>
+          hello
+          <p>PPPPP</p>
+        </div>
       </main>
       <div className={styles.hello}>hello</div>
     </div>
