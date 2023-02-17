@@ -9,21 +9,10 @@
     color: c.$C_BLUE;
     background-color: c.$C_BLACK;
   }
-
-  .input {
-    width: 220px;
-    height: 40px;
-    padding: 0px 12px;
-    border: 1px solid #cccccc;
-    border-radius: 4px;
-
-    &:focus {
-      outline: none;
-    }
+  .hello {
+    font-size: 50px;
+    font-weight: 700;
+    color: c.$C_YELLOW;
+    background-color: c.$C_BLUE;
   }
-}
-
-.buttonWrapper {
-  width: 100%;
-  z-index: 100;
 }
