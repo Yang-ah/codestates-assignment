@@ -65,7 +65,7 @@ const Tweets = () => {
             <div className={styles.tweetForm__submit}>
               <div className={styles.tweetForm__submitIcon}></div>
               <button
-                type="button"
+                type="submit"
                 className={styles.submitButton}
                 onClick={onClickButton}
               >

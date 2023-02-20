@@ -1,0 +1,25 @@
+@use "../../styles/constants" as c;
+@use "../../styles/mixins" as m;
+
+.wrapper {
+  @include m.flex(flex-start, flex-start, column);
+  margin: 40px;
+
+  > h1 {
+    font-size: 50px;
+    font-weight: 700;
+    color: c.$C_BLUE;
+    background-color: c.$C_BLACK;
+  }
+  .hello {
+    font-size: 50px;
+    font-weight: 700;
+    color: c.$C_YELLOW;
+    background-color: c.$C_BLUE;
+
+    > p {
+      color: c.$C_GREEN;
+      background-color: c.$C_RED;
+    }
+  }
+}
