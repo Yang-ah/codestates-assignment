@@ -19,7 +19,6 @@
 
 .productsWrapper {
   @include m.flex(center, center, column);
-  padding: 20px;
 
   > ul {
     @include m.flex(flex-start);
@@ -27,6 +26,7 @@
     row-gap: 8px;
     max-height: calc(100vh - 82px);
     width: 100%;
+    padding: 20px;
 
     overflow-y: scroll;
     flex-wrap: wrap;
