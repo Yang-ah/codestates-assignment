@@ -8,6 +8,7 @@ const Home = () => {
   const [products, setProducts] = useState([]);
 
   const onGetProducts = async () => {
+    //서버에서 데이터를 불러옴.
     const response = await getProducts();
 
     if (response.status === 200) {

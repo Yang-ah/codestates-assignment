@@ -21,7 +21,8 @@
   @include m.flex(center, center, column);
 
   > ul {
-    @include m.flex(flex-start);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, auto));
     column-gap: 12px;
     row-gap: 8px;
     max-height: calc(100vh - 82px);

@@ -7,7 +7,8 @@ import { HomePage } from "../pages";
 
 const router = (
   <Route>
-    <Route path="/*" element={<HomePage />} />
+    <Route path="/" element={<HomePage />} />
+    <Route path="/" element={<HomePage />} />
   </Route>
 );
 

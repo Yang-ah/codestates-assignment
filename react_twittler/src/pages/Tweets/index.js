@@ -25,6 +25,7 @@ const Tweets = () => {
 
   const onChange = (e) => {
     const { value, name } = e.currentTarget;
+
     setInput({
       ...input,
       [name]: value,
