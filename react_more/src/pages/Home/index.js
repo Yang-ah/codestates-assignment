@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import styles from "./home.module.scss";
 
@@ -34,6 +34,29 @@ const Home = () => {
   const onCloseModal = () => {
     setIsOpen(false);
   };
+
+  //id가 처음에 undefined일 수 있음,
+  //MEMO: 첫 번째 인자 => 함수 / 두 번째 인자 => 의존성 배열(deps)
+  //MEMO: 기본적인 원리 => deps안의 값이 변경되면, 함수를 실행한다.
+  // 사이드 이펙트 (Side Effect) : 다른 코드에 의해서 실행이 되는 코드 및 현상
+  /**
+   * useEffect 사용 시기
+   * 1) 어떤 변수가 변경될 때마다 실행되어야하는 로직이 있을 때
+   * 2) 특정 상황을 감지해야 할 때
+   */
+  useEffect(() => {
+    console.log("useEffect 실행! ", count);
+    if (count === 10) {
+      alert("10이 되었습니다.");
+    }
+  }, [count]);
+
+  /**
+   * React의 기본적인 Life Cycle (코드의 실행 순서)
+   * 1) setState
+   * 2) 해당 state에 의존하고 있는 useEffect 실행
+   * 3) re-render
+   */
 
   return (
     <section className={styles.wrapper}>
