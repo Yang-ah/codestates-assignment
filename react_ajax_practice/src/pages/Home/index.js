@@ -20,6 +20,8 @@ const Home = () => {
     onGetProducts();
   }, []);
 
+  //MEMO: 디자인 + 기획 => 백엔드 개발자 => 퍼블리싱(디자인을 화면으로 옮기는 작업) + 설계 => API 연동 (API를 붙인다)
+
   return (
     <main className={styles.wrapper}>
       <header className={styles.header}>
@@ -28,7 +30,7 @@ const Home = () => {
       <section className={styles.productsWrapper}>
         <ul>
           {products.map((product) => {
-            return <Product product={product} />;
+            return <Product key={product.id} product={product} />;
           })}
         </ul>
       </section>

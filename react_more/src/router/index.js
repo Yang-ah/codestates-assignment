@@ -3,14 +3,14 @@ import {
   createRoutesFromElements,
   Route,
 } from "react-router-dom";
-import { PostLayout, Layout } from "../components/Layout";
+import { PostLayout } from "../components/Layout";
 import { AuthPage, HomePage, PostDetailPage, PostsPage } from "../pages";
 
 //MEMO: 1) :id 와 같이 path variable을 사용한 route
 //MEMO: 2) 중첩 routing
 
 const route = (
-  <Route path="/" element={<Layout />}>
+  <Route path="/">
     {/* 인덱스 페이지 */}
     <Route index element={<HomePage />} />
     {/* 게시글 페이지 */}
