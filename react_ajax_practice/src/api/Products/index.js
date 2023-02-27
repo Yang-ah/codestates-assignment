@@ -9,3 +9,9 @@ export const getProducts = () => {
 export const getProduct = (id) => {
   return apiClient.get(`/products/${id}`);
 };
+
+export const searchProduct = (params) => {
+  return apiClient.get("/products/search", {
+    params,
+  });
+};
