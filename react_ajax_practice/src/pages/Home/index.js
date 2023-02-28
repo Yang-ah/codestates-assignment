@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { getProducts, searchProduct } from "../../api/Products";
 
 import styles from "./home.module.scss";
 import Product from "./Product";
 
 const Home = () => {
+  const navigate = useNavigate();
+
   const [products, setProducts] = useState([]);
   const [searchText, setSearchText] = useState("");
 
@@ -41,11 +44,17 @@ const Home = () => {
     setSearchText(value);
   };
 
+  //MEMO: id값을 받아서 path variable로 사용하는 함수
+  const onNavigateDetail = (id) => {
+    return () => {
+      //MEMO: navigate를 할 때는 /가 있어야 함
+      navigate(`/${id}`);
+    };
+  };
+
   useEffect(() => {
     onGetProducts();
   }, []);
-
-  //MEMO: 디자인 + 기획 => 백엔드 개발자 => 퍼블리싱(디자인을 화면으로 옮기는 작업) + 설계 => API 연동 (API를 붙인다)
 
   return (
     <main className={styles.wrapper}>
@@ -69,7 +78,13 @@ const Home = () => {
       <section className={styles.productsWrapper}>
         <ul>
           {products.map((product) => {
-            return <Product key={product.id} product={product} />;
+            return (
+              <Product
+                key={product.id}
+                product={product}
+                onClick={onNavigateDetail(product.id)}
+              />
+            );
           })}
         </ul>
       </section>
