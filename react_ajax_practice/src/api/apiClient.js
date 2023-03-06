@@ -3,7 +3,7 @@ import config from "../config";
 
 //axios 인스턴스 => 이름 : apiClient, BaseURL : config.API_URL
 const apiClient = axios.create({
-  baseURL: config.API_URL,
+  baseURL: config.API_URL, // https://codestates.kyoongdev.com
   timeout: 5_000,
 });
 
