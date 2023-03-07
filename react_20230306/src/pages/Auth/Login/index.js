@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import styles from "./login.module.scss";
+import { KakaoLoginIcon } from "../../../assets/icon";
+import { kakaoLogin } from "../../../api/Auth";
 
 //MEMO: lodash => lodash-es
 const Login = () => {
@@ -25,9 +27,13 @@ const Login = () => {
     // });
   };
 
-  // const onSubmitForReactForm = (data) => {
-  //   console.log(`Sumbit By react-hook-form`, data);
-  // };
+  const onClickKakao = async () => {
+    const response = await kakaoLogin();
+
+    if (response.status === 200) {
+      window.open(response.data.url, "_self");
+    }
+  };
 
   return (
     <main className={styles.wrapper}>
@@ -66,6 +72,14 @@ const Login = () => {
             form="loginForm"
           >
             로그인
+          </button>
+          <button
+            className={styles.kakaoButton}
+            type="button"
+            onClick={onClickKakao}
+          >
+            <KakaoLoginIcon />
+            카카오로 로그인하기
           </button>
         </form>
       </section>

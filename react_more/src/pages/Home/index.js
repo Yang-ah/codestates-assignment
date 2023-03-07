@@ -59,27 +59,14 @@ const Home = () => {
    */
 
   return (
-    <section className={styles.wrapper}>
-      <h1>Home</h1>
-      <p>count : {count}</p>
-      <button onClick={onClickPlusButton}>증가</button>
-      <button onClick={onClickMinusButton}>감소</button>
-      <button onClick={onOpenModal}>열기</button>
-      <button onClick={onCloseModal}>닫기</button>
-      {isOpen && (
-        <div className={styles.modal}>
-          <h1>모달</h1>
-          <p>
-            이렇게 어려운 결제 연동, 토스페이먼츠가 결제위젯으로 쉽게
-            풀어드려요! 😊 결제위젯은 한 번 연동하면 다양한 결제 수단과 커스텀
-            디자인을 노코드(No-code)로 제공하는 서비스입니다. 이번 포스트에는
-            결제위젯으로 간단한 온라인 결제 페이지를 만들어볼게요. 마지막에
-            토스페이먼츠 결제전담팀을 빌려갈 수 있는 이벤트도 있으니, 끝까지
-            읽어주세요.
-          </p>
-        </div>
-      )}
-    </section>
+    <main>
+      <section className={styles.wrapper}>
+        <header>
+          <h1>소제목</h1>
+          <button>버튼</button>
+        </header>
+      </section>
+    </main>
   );
 };
 
