@@ -3,14 +3,18 @@ import { useForm } from "react-hook-form";
 import styles from "./login.module.scss";
 import { KakaoLoginIcon } from "../../../assets/icon";
 import { kakaoLogin } from "../../../api/Auth";
+import config from "../../../config";
+import { useLocation } from "react-router-dom";
 
 //MEMO: lodash => lodash-es
 const Login = () => {
+  const location = useLocation();
   // const { register, handleSubmit } = useForm();
   const [form, setForm] = useState({
     userId: "",
     password: "",
   });
+  console.log({ location });
 
   const onChange = (e) => {
     const { name, value } = e.currentTarget;
@@ -20,16 +24,11 @@ const Login = () => {
   const onSubmit = async (e) => {
     e.preventDefault();
     console.log(e);
-    // TODO: login API 연동
-    // await loginApi({
-    //   userId: form.userId,
-    //   password: form.password,
-    // });
   };
 
   const onClickKakao = async () => {
     const response = await kakaoLogin();
-
+    console.log(response);
     if (response.status === 200) {
       window.open(response.data.url, "_self");
     }

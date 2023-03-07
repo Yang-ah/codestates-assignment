@@ -3,6 +3,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 import { kakaoRegister } from "../../../../api/Auth";
 import qs from "query-string";
 import styles from "./register.module.scss";
+import { saveTokens } from "../../../../utils/jwt";
 
 const Register = () => {
   const location = useLocation();
@@ -37,8 +38,7 @@ const Register = () => {
 
     if (response.status === 200) {
       const data = response.data;
-      localStorage.setItem("accessToken", data.accessToken);
-      localStorage.setItem("refreshToken", data.refreshToken);
+      saveTokens(data);
       navigate("/");
     }
   };

@@ -1,13 +1,16 @@
 import cx from "classnames";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { ChevronIcon } from "../../assets/icon";
+
 import styles from "./home.module.scss";
 
 const Home = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
 
+  console.log({ location });
   const onClickIcon = () => {
     setIsOpen(!isOpen);
   };
