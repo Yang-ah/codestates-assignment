@@ -26,6 +26,7 @@ const route = (
     <Route path="posts/:postId" element={<PostDetailPage />} /> */}
     {/* 로그인/회원가입페이지 */}
     <Route path="auth" element={<AuthPage />} />
+    <Route path="admin"></Route>
   </Route>
 );
 

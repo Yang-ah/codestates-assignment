@@ -1,0 +1,28 @@
+@use "../../../styles/constants" as c;
+
+.button {
+  background-color: c.$C_PRIMARY;
+  color: c.$C_WHITE;
+  border-radius: 8px;
+  border: 1px solid c.$C_PRIMARY;
+  padding: 8px 12px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: c.$C_WHITE;
+    color: c.$C_PRIMARY;
+    border: 1px solid c.$C_PRIMARY;
+  }
+
+  &.secondary {
+    background-color: c.$C_SECONDARY;
+    color: c.$C_WHITE;
+    border: 1px solid c.$C_SECONDARY;
+
+    &:hover {
+      background-color: c.$C_WHITE;
+      color: c.$C_SECONDARY;
+      border: 1px solid c.$C_SECONDARY;
+    }
+  }
+}

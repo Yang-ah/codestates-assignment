@@ -1,7 +1,11 @@
 import React from "react";
-import { Outlet } from "react-router-dom";
+import { Outlet, useLocation } from "react-router-dom";
 
 const Layout = () => {
+  const location = useLocation();
+
+  const isMainPage = location.pathname === "/main";
+
   return (
     <section style={{ padding: "20px" }}>
       <header>

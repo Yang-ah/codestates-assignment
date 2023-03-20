@@ -1,5 +1,12 @@
 .wrapper {
   padding: 72px;
+  > header {
+    > h1 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #000000;
+    }
+  }
 }
 
 .modal {
