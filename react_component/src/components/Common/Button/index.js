@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import cx from "classnames";
 
 import styles from "./button.module.scss";
@@ -15,4 +15,4 @@ const Button = ({ className, children, color, ...props }) => {
   );
 };
 
-export default Button;
+export default memo(Button);

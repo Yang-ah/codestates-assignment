@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import cx from "classnames";
 
 import { IconChevronDown } from "../../../assets/icon";
@@ -50,4 +50,4 @@ const Dropdown = ({ className, items, valueKey, value, onClick }) => {
     </div>
   );
 };
-export default Dropdown;
+export default memo(Dropdown);

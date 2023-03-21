@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import cx from "classnames";
 
 import styles from "./toggle.module.scss";
@@ -12,4 +12,4 @@ const Toggle = ({ className, ...props }) => {
   );
 };
 
-export default Toggle;
+export default memo(Toggle);

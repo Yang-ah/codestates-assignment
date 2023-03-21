@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { Button, CheckBox, Dropdown, Input, Toggle } from "../../components";
 import styles from "./home.module.scss";
 
@@ -42,20 +42,20 @@ const Home = () => {
   const [isError, setIsError] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
 
-  const onClickPrimaryButton = () => {
-    setIsError(!isError);
-  };
+  const onClickPrimaryButton = useCallback(() => {
+    setIsError((prev) => !prev);
+  }, []);
 
-  const onChangeToggle = (e) => {
+  const onChangeToggle = useCallback((e) => {
     const { checked } = e.currentTarget;
     setIsChecked(checked);
-  };
+  }, []);
 
-  const onClickDropdown = (item) => {
+  const onClickDropdown = useCallback((item) => {
     return () => {
       setSelectedItem((prev) => (prev?.id === item.id ? null : item));
     };
-  };
+  }, []);
 
   return (
     <main>
