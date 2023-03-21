@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, CheckBox, Input, Toggle } from "../../components";
+import { Button, CheckBox, Dropdown, Input, Toggle } from "../../components";
 import styles from "./home.module.scss";
 
 //TODO: Button, Input, Toggle, Checkbox
@@ -14,9 +14,33 @@ import styles from "./home.module.scss";
  * 2) pull request : develop <- feature/button
  */
 
+const dropdownItems = [
+  {
+    id: 1,
+    email: "item1",
+    nickname: "item1-value",
+  },
+  {
+    id: 2,
+    email: "item2",
+    nickname: "item2-value",
+  },
+  {
+    id: 3,
+    email: "item3",
+    nickname: "item3-value",
+  },
+  {
+    id: 4,
+    email: "item4",
+    nickname: "item4-value",
+  },
+];
+
 const Home = () => {
   const [isChecked, setIsChecked] = useState(false);
   const [isError, setIsError] = useState(false);
+  const [selectedItem, setSelectedItem] = useState(null);
 
   const onClickPrimaryButton = () => {
     setIsError(!isError);
@@ -27,6 +51,12 @@ const Home = () => {
     setIsChecked(checked);
   };
 
+  const onClickDropdown = (item) => {
+    return () => {
+      setSelectedItem((prev) => (prev?.id === item.id ? null : item));
+    };
+  };
+
   return (
     <main>
       <section className={styles.wrapper}>
@@ -34,8 +64,9 @@ const Home = () => {
           <h1>MainPage</h1>
         </header>
         <h2>Button</h2>
-
-        <Button onClick={onClickPrimaryButton}>button예시</Button>
+        <Button className={styles.exampleButton} onClick={onClickPrimaryButton}>
+          button예시
+        </Button>
         <Button color="secondary">button예시</Button>
         <h2>Input</h2>
         <Input label="label" />
@@ -44,6 +75,13 @@ const Home = () => {
         <Toggle checked={isChecked} onChange={onChangeToggle} />
         <h2>CheckBox</h2>
         <CheckBox />
+        <h2>Dropdown</h2>
+        <Dropdown
+          items={dropdownItems}
+          valueKey="email"
+          value={selectedItem?.email}
+          onClick={onClickDropdown}
+        />
       </section>
     </main>
   );
